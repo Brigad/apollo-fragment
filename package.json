@@ -2,6 +2,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "modules:clean": "rm -rf node_modules && cd packages && ls -d */ | xargs -I {} bash -c \"cd '{}' && rm -rf node_modules\"",
     "bootstrap": "yarn install && lerna bootstrap",
     "postbootstrap": "npm run build",
     "build": "lerna run -- build",
